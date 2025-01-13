@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se promener à Lyon</title>
+
+    <!--  les style CSS  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
+</head>
+
+<body>
+
+    <!-- En-tête du site -->
+    <header>
+        <h1>Se Promener à Lyon</h1>
+        <p>Découvrez les Meilleurs endroits pour les randonnées!</p>
+        <div id="infostudent">
+            <img src="./img//logo.png" alt="Logo" id="logo">
+            <div>
+                Réalisé par <a href="https://www.linkedin.com/in/benirina-parfait-rafamatanantsoa-1a2653270/" target="_blank" class="student-link">Benirina Parfait RAFAMATANANTSOA</a> <br>
+                Master Geonum - Promo 2025
+            </div>
+        </div>
+    </header>
+
+    <div id="content" style="display: flex; height: 100vh;">
+        <!-- section pour les données temperatures -->
+        <div id="sidebar" style="margin-top: 20px;">
+            <div >
+                Cliquez sur n'importe quel endroit de la carte pour visualiser les prédictions des données sur les températures des 7 prochains jours de cet endroit.
+            </div>
+            <div id="graph" style="height: 80vh; width: 100%;">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <p>Données depuis <a href="https://open-meteo.com/">Open Meteo</a></p>
+
+        </div>
+        <!-- Carte interactive -->
+        <div id="map">
+            <!-- Légende des éléments sur la carte -->
+            <div id="legend">
+                <strong>Légende :</strong><br><br>
+                <div id="fontaines" class="legend-item">
+                    <div class="legend-item-content">
+                        <div class="fontaine-color"></div>
+                        <span>Fontaine d'eau</span>
+                    </div>
+                </div>
+
+                <div id="randonnee" class="legend-item">
+                    <div class="legend-item-content">
+                        <div class="color-line" style="background-color: orange;"></div>
+                        <span>Chemins- Randonnée</span>
+                    </div>
+                </div>
+
+                <div id="espaces-verts" class="legend-item">
+                    <div class="legend-item-content">
+                        <div class="color-box"></div>
+                        <span>Espace Vert</span>
+                    </div>
+                </div>
+
+                <div id="arbres" class="legend-item">
+                    <div class="legend-item-content">
+                        <div class="color-point" style="background-color: rgb(63, 226, 63);"></div>
+                        <span>Arbre</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Désactiver les avertissements et erreurs dans la console -->
+    <script>
+        console.warn = function() {}; // Désactive les avertissements
+        console.error = function() {}; // Désactive les erreurs
+    </script>
+    <!-- chartJS, pour le graphe -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Inclusion des scripts JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Pour le geocodage -->
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+
+    <!-- pour la gestion des clusters de marqueurs -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.0/dist/leaflet.markercluster.js"></script>
+
+    <!-- Script principal de l'application -->
+    <script src="app.js"></script> 
+</body>
+</html>

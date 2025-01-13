@@ -1,0 +1,171 @@
+
+/* Styles pour la carte */
+#map {
+    height: 100vh; 
+    width: 80%;
+    margin-top: 20px; 
+    flex: 1;
+}
+#sidebar{
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif; 
+    font-size: 15px;
+}
+
+header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 40px; 
+    background: url('img/image.jpg') center/cover no-repeat; /* Utilisation d'une image de fond */
+    color: white; 
+    font-family: 'Roboto', sans-serif; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative; 
+}
+
+/* Titre du header */
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Ombre du texte */
+}
+
+/* Sous-titre du header */
+header p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Ombre légère pour le texte */
+}
+
+/* Positionnement et style du bloc infostudent */
+#infostudent {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Style du logo geonum */
+#logo {
+    width: 40px; 
+    height: 40px; 
+    margin-right: 10px; 
+    border-radius: 50%; 
+}
+
+/* Effet de survol du titre */
+header h1:hover {
+    color: #FFEB3B; 
+    transition: color 0.3s ease; 
+}
+
+/* Style des liens dans le header */
+a.student-link {
+    color: white;
+    text-decoration: none;
+}
+
+a.student-link:hover {
+    text-decoration: underline; 
+}
+
+/* Style général pour la légende */
+#legend {
+    background: white;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+    padding: 10px;
+    width: 150px; 
+}
+
+/* Style pour chaque élément de la légende */
+.legend-item {
+    margin-bottom: 8px;
+}
+
+/* Contenu de chaque élément de la légende */
+.legend-item-content {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+/* Style des polygones  dans la légende */
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 3px solid rgb(5, 126, 11); 
+    background-color: rgb(189, 235, 185); 
+}
+
+/* Style des points  dans la légende */
+.color-point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; 
+}
+
+/* Style des lignes  dans la légende */
+.color-line {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* Style pour la légende Fontaines : Cercle bordé bleu */
+.fontaine-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; 
+    border: 3px solid blue; 
+    background-color: transparent; 
+}
+
+/* Style des popups */
+.popup-content {
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.popup-content h4 {
+    color: #2c3e50;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.popup-content strong {
+    color: #2980b9;
+}
+
+/* Style pour le contrôle des couches */
+.leaflet-control-layers {
+    background-color: rgba(255, 255, 255, 0.8); /* Fond légèrement transparent */
+    padding: 10px; /* Espacement intérieur */
+}
